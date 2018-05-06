@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= title
+  form(action="/create-user",method="POST")
+    p ID:
+      input(type="text")
+    p Password:
+      input(type="password")
