@@ -3,7 +3,7 @@ var mysql = require('mysql');
 var dbconfig = {
     host:'localhost',
     user:'root',
-    password:'kazu7188',
+    password:'root',
     database:'partsManager'
 };
 
