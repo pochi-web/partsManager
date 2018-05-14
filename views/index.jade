@@ -1,6 +1,19 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 在庫管理
+  form(action='/' method="POST")
+    table
+      thead
+        tr
+          th 品目
+          th 数量
+      tbody
+        tr
+          td
+            input(type="text" name="itemName")
+          td
+            input(type="number" name="quantity")
+      input(type="submit" value="送信")
+     
 
