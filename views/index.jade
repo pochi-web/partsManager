@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h1 在庫管理
+  h1 #{title}
   form(action='/' method="POST")
     table
       thead
@@ -14,6 +14,6 @@ block content
             input(type="text" name="itemName")
           td
             input(type="number" name="quantity")
-      input(type="submit" value="送信")
+    input(type="submit" value="送信")
      
 
