@@ -2,6 +2,9 @@ extends layout
 
 block content
   h1 #{title}
+  ul
+    each item in itemList
+      li #{item.itemName}: #{item.quantity}
   form(action='/' method="POST")
     table
       thead

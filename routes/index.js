@@ -5,8 +5,15 @@ var moment = require('moment');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
-  res.render('index', { title: 'Express' });
+  var query = 'SELECT * FROM itemList';
+  connect.query(query,function(err,rows){
+    console.log(rows);
+    res.render('index', { 
+      title: 'Express',
+      itemList:rows      
+    });
+  })
+  
 });
 
 router.post('/', function(req,res,next){
