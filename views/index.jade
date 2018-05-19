@@ -4,7 +4,8 @@ block content
   h1 #{title}
   ul
     each item in itemList
-      li #{item.itemName}: #{item.quantity}
+      li #{item.itemName} 
+        input(type="number" name="quantity" placeholder="#{item.quantity}")
   form(action='/' method="POST")
     table
       thead
@@ -13,6 +14,7 @@ block content
           th 数量
       tbody
         tr
+        td
           td
             input(type="text" name="itemName")
           td

@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
   connect.query(query,function(err,rows){
     console.log(rows);
     res.render('index', { 
-      title: 'Express',
+      title: 'アイテムリスト',
       itemList:rows      
     });
   })
