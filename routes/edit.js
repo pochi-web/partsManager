@@ -9,18 +9,13 @@ router.get('/:id',function(req,res,next){
     var query = 'SELECT * FROM itemList WHERE id = "'+ id +'" ';
     connect.query(query,function(err,rows){
     res.render('edit',{
-<<<<<<< HEAD
       title:'編集',
       id:id,
-=======
-      title:'編集画面',
->>>>>>> 0b4fc9e304e67fa7719e1f7188544ba858de534b
       itemList:rows
     })
 });
 });
 
-<<<<<<< HEAD
 router.post('/:id',function(req,res,next){
     var id = req.params.id;
     var newId = req.body.id;
@@ -35,6 +30,4 @@ router.post('/:id',function(req,res,next){
     
 });
 
-=======
->>>>>>> 0b4fc9e304e67fa7719e1f7188544ba858de534b
 module.exports = router;

@@ -18,17 +18,6 @@ block content
             td #{item.quantity}
             td #{item.last_modified}
             td
-<<<<<<< HEAD
-=======
-              input(type="number" name="id" placeholder="#{item.id}")
-            td
-              input(type="text" name="itemName" placeholder="#{item.itemName}")
-            td
-              input(type="number" name="quantity" placeholder="#{item.quantity}")
-            td
-              input(type="text" name="last_modified" placeholder="#{item.last_modified}")
-            td
->>>>>>> 0b4fc9e304e67fa7719e1f7188544ba858de534b
               a(href="edit/#{item.id}") 編集する
   form(action='/' method="POST")
     h1 新品目追加
