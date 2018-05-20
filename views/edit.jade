@@ -7,4 +7,5 @@ block content
         input(type="number" name="id" placeholder="#{item.id}" value="#{item.id}")
         input(type="text" name="itemName" placeholder="#{item.itemName}" value="#{item.itemName}")
         input(type="number" name="quantity" placeholder="#{item.quantity}" value="#{item.quantity}")
-        input(type="submit" value="編集")
+        input(type="submit" value="この内容に変更する")
+        a(href="/drop/#{id}") 削除
