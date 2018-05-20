@@ -9,7 +9,7 @@ router.get('/:id',function(req,res,next){
     var query = 'SELECT * FROM itemList WHERE id = "'+ id +'" ';
     connect.query(query,function(err,rows){
     res.render('edit',{
-      title:'編集画面',
+      title:'編集',
       id:id,
       itemList:rows
     })
