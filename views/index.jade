@@ -3,22 +3,34 @@ extends layout
 block content
   h1 #{title}
   ul
-    each item in itemList
-      li #{item.itemName} 
-        input(type="number" name="quantity" placeholder="#{item.quantity}")
-  form(action='/' method="POST")
     table
       thead
         tr
-          th 品目
+          th 管理番号
+          th アイテム名
           th 数量
+          th 更新日
       tbody
-        tr
-        td
-          td
+        each item in itemList
+          tr
+            td
+              input(type="number" name="id" placeholder="#{item.id}")
+            td
+              input(type="text" name="itemName" placeholder="#{item.itemName}")
+            td
+              input(type="number" name="quantity" placeholder="#{item.quantity}")
+            td
+              input(type="text" name="last_modified" placeholder="#{item.last_modified}")
+  form(action='/' method="POST")
+    h1 新品目追加
+    table
+      tr
+        td 
+          label 品名： 
             input(type="text" name="itemName")
-          td
-            input(type="number" name="quantity")
+        td
+          label 数量：
+            input(type="number" name="quantity")            
     input(type="submit" value="送信")
      
 
