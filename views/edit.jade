@@ -23,16 +23,3 @@ block content
               input(type="text" name="last_modified" placeholder="#{item.last_modified}")
             td
               a(href="edit/#{item.id}") 編集する
-  form(action='/' method="POST")
-    h1 新品目追加
-    table
-      tr
-        td 
-          label 品名： 
-            input(type="text" name="itemName")
-        td
-          label 数量：
-            input(type="number" name="quantity")            
-    input(type="submit" value="送信")
-     
-
