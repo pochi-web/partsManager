@@ -13,14 +13,10 @@ block content
       tbody
         each item in itemList
           tr
-            td
-              input(type="number" name="id" placeholder="#{item.id}")
-            td
-              input(type="text" name="itemName" placeholder="#{item.itemName}")
-            td
-              input(type="number" name="quantity" placeholder="#{item.quantity}")
-            td
-              input(type="text" name="last_modified" placeholder="#{item.last_modified}")
+            td #{item.id}
+            td #{item.itemName}
+            td #{item.quantity}
+            td #{item.last_modified}
             td
               a(href="edit/#{item.id}") 編集する
   form(action='/' method="POST")

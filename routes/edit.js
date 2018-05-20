@@ -10,9 +10,23 @@ router.get('/:id',function(req,res,next){
     connect.query(query,function(err,rows){
     res.render('edit',{
       title:'編集画面',
+      id:id,
       itemList:rows
     })
 });
+});
+
+router.post('/:id',function(req,res,next){
+    var id = req.params.id;
+    var itemName = req.body.itemName;
+    var quantity = req.body.quantity;
+    var last_modified = moment().format('YYYY-MM-DD HH:mm:ss');
+    var query = 'UPDATE itemList SET id="'+id+'", itemName="'+itemName+'", quantity="'+quantity+'",last_modified="'+last_modified+'" WHERE id="'+id+'"';    
+    connect.query(query,function(err,rows){
+        console.log(query);
+        res.redirect('/');
+    });
+    
 });
 
 module.exports = router;
