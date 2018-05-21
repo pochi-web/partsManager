@@ -3,6 +3,11 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+h1 {
+  font-size:24px;
+  color:#007bc3;
+}
+th,
+input[type=submit]{
+  color:white;
 }
