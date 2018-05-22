@@ -2,8 +2,15 @@ extends layout
 
 block content
   h1 #{title}
-    form(action="/" method="POST")
-      input(type="text" name="userName")
-      labal(for="userName") ユーザー名
-      input(type="email" name="userEmail")
-      lable(for="uerEmail") Email
+    form(action="/register" method="POST")
+      p.row
+        span.input-field.col.s12
+          input(type="text" name="userName")
+          label(for="userName") ユーザー名
+        span.input-field.col.s12
+          input(type="email" name="userEmail")
+          label(for="uerEmail") Email
+        span.input-field.col.s12
+          input(type="password" name="password")
+          label(for="password") パスワード
+        input(type="submit")

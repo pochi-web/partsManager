@@ -9,24 +9,24 @@ router.get('/', function(req, res, next) {
       title: 'ユーザー登録'  
 });
 });
-/*
-router.post('/', function(req,res,next){
-  var id = req.body.id;
-  var itemName = req.body.itemName;
-  var quantity = req.body.quantity;
-  var last_modified = moment().format('YYYY-MM-DD HH:mm:ss');
 
-  var query = 'INSERT INTO itemList(itemName,quantity,last_modified) VALUES("'+ itemName +'",'+' "' + quantity + '",'+'"'+last_modified+'")';
+router.post('/', function(req,res,next){
+  var userName = req.body.userName;
+  var userEmail= req.body.userEmail;
+  var password = req.body.password;
+
+  var query = 'INSERT INTO users(user_name,user_email,password) VALUES("'+ userName +'",'+' "' + userEmail + '",'+'"'+password+'")';
 
   connect.query(query,function(err,rows){
     res.redirect('/');
-    console.log(itemName);
-    console.log(quantity);
-    console.log(last_modified);
+    console.log(userName);
+    console.log(userEmail);
+    console.log(password);
+    console.log(query);
   });
   
 });
 
-*/
+
 
 module.exports = router;
