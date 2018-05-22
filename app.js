@@ -5,12 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var moment = require('moment');
+var session = require('express-session');
 
 //Routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var edit = require('./routes/edit');
 var drop = require('./routes/drop');
+var register = require('./routes/register');
 
 var passport = require('passport');
 
@@ -30,9 +32,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
 
 //app
+
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true
+}))
 app.use('/', routes);
 app.use('/edit',edit);
 app.use('/drop',drop);
+app.use('/register',register);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
