@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1 #{title}
-    form(action="/register" method="POST")
+    form(action="/login" method="POST")
       p.row
         span.input-field.col.s12
           input(type="text" name="userName")
@@ -14,4 +14,5 @@ block content
           input(type="password" name="password")
           label(for="password") パスワード
         input(type="submit")
-    if(typeof #{message} !== undefined)
+    if(message !=undefined)
+      p.card-panel.teal lighten-2 #{message}

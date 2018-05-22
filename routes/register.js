@@ -19,10 +19,6 @@ router.post('/', function(req,res,next){
 
   connect.query(query,function(err,rows){
     res.redirect('/');
-    console.log(userName);
-    console.log(userEmail);
-    console.log(password);
-    console.log(query);
   });
   
 });

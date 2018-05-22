@@ -13,6 +13,7 @@ var users = require('./routes/users');
 var edit = require('./routes/edit');
 var drop = require('./routes/drop');
 var register = require('./routes/register');
+var login = require('./routes/login');
 
 var passport = require('passport');
 
@@ -42,7 +43,7 @@ app.use('/', routes);
 app.use('/edit',edit);
 app.use('/drop',drop);
 app.use('/register',register);
-app.use('/users', users);
+app.use('/login',login);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
