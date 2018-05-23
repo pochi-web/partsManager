@@ -24,9 +24,8 @@ router.post('/', function(req,res,next){
       res.redirect('/');
     }else{
       res.render('login',{
-        message:'入力情報が間違っています。もう一度お試しください。'
+        message:'入力内容が間違っています。もう一度お試しください。'
       })
-      
     }
     
   });

@@ -5,6 +5,7 @@ var moment = require('moment');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  
   var query = 'SELECT * FROM itemList';
   connect.query(query,function(err,rows){
     console.log(rows);
@@ -13,7 +14,6 @@ router.get('/', function(req, res, next) {
       itemList:rows      
     });
   })
-  
 });
 
 router.post('/', function(req,res,next){

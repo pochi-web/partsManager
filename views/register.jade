@@ -14,4 +14,5 @@ block content
           input(type="password" name="password")
           label(for="password") パスワード
         input(type="submit")
-    if(typeof #{message} !== undefined)
+    if(typeof message !== undefined)
+      p #{message}

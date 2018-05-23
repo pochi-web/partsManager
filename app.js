@@ -7,6 +7,9 @@ var bodyParser = require('body-parser');
 var moment = require('moment');
 var session = require('express-session');
 
+//modules in routes folder
+var sessionStatus = require('./routes/sessionstatus');
+
 //Routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -38,12 +41,13 @@ app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true
-}))
-app.use('/', routes);
-app.use('/edit',edit);
-app.use('/drop',drop);
+}));
 app.use('/register',register);
 app.use('/login',login);
+app.use('/',sessionStatus,routes);
+app.use('/edit',sessionStatus,edit);
+app.use('/drop',sessionStatus,drop);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
