@@ -6,7 +6,7 @@ var moment = require('moment');
 router.get('/:id',function(req,res,next){
     var id = req.params.id;
     console.log(id);
-    var query = 'SELECT * FROM itemList WHERE id = "'+ id +'" ';
+    var query = 'SELECT * FROM item_list WHERE id = "'+ id +'" ';
     connect.query(query,function(err,rows){
     res.render('edit',{
       title:'編集',
@@ -19,10 +19,10 @@ router.get('/:id',function(req,res,next){
 router.post('/:id',function(req,res,next){
     var id = req.params.id;
     var newId = req.body.id;
-    var itemName = req.body.itemName;
+    var item_name = req.body.itemName;
     var quantity = req.body.quantity;
     var last_modified = moment().format('YYYY-MM-DD HH:mm:ss');
-    var query = 'UPDATE itemList SET id="'+newId+'", itemName="'+itemName+'", quantity="'+quantity+'",last_modified="'+last_modified+'" WHERE id="'+id+'"';    
+    var query = 'UPDATE item_list SET id="'+newId+'", item_name="'+item_name+'", quantity="'+quantity+'",last_modified="'+last_modified+'" WHERE id="'+id+'"';    
     connect.query(query,function(err,rows){
         console.log(query);
         res.redirect('/');
