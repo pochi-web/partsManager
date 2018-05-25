@@ -6,7 +6,7 @@ var moment = require('moment');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   
-  var query = 'SELECT * FROM item_list';
+  var query = 'SELECT * FROM itemList';
   connect.query(query,function(err,rows){
     console.log(rows);
     res.render('index', { 
@@ -18,15 +18,15 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req,res,next){
   var id = req.body.id;
-  var item_name = req.body.itemName;
+  var itemName = req.body.itemName;
   var quantity = req.body.quantity;
   var last_modified = moment().format('YYYY-MM-DD HH:mm:ss');
 
-  var query = 'INSERT INTO item_list(item_name,quantity,last_modified) VALUES("'+ item_name +'",'+' "' + quantity + '",'+'"'+last_modified+'")';
+  var query = 'INSERT INTO itemList(itemName,quantity,last_modified) VALUES("'+ itemName +'",'+' "' + quantity + '",'+'"'+last_modified+'")';
 
   connect.query(query,function(err,rows){
     res.redirect('/');
-    console.log(item_name);
+    console.log(itemName);
     console.log(quantity);
     console.log(last_modified);
   });

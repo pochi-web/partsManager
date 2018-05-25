@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1 #{title}
+    form(action="/add" method="POST")
+      input(type="text" name="category" placeholder="分類" value="")
+      input(type="text" name="producer" placeholder="メーカー" value="")
+      input(type="text" name="itemName" placeholder="製品名" value="")
+      input(type="text" name="product_number" placeholder="型式" value="")
+      input(type="text" name="rack" placeholder="棚番号" value="")
+      input(type="text" name="palette" placeholder="パレット番号" value="")
+      input(type="text" name="vender" placeholder="仕入先" value="")    
+      input(type="number" name="used" placeholder="中古品在庫数" value="")
+      input(type="number" name="new" placeholder="新品在庫数" value="")
+      input(type="number" name="quantity" placeholder="数量" value="")
+      input(type="submit" value="この内容で登録する")
+      a(href="/add") 登録

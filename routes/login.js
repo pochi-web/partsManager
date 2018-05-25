@@ -11,11 +11,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req,res,next){
-  var user_name = req.body.userName;
-  var user_email= req.body.userEmail;
+  var userName = req.body.userName;
+  var userEmail= req.body.userEmail;
   var password = req.body.password;
 
-  var query = 'SELECT user_id FROM users WHERE user_email="'+user_email+'" AND password="'+password+'" LIMIT 1';
+  var query = 'SELECT user_id FROM users WHERE user_email="'+userEmail+'" AND password="'+password+'" LIMIT 1';
 
   connect.query(query,function(err,rows){
     var userId = rows.length? rows[0]:false

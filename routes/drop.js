@@ -18,7 +18,7 @@ router.get('/:id',function(req,res,next){
 
 router.post('/:id',function(req,res,next){
     var id = req.params.id;
-    var query = 'DELETE FROM item_list WHERE id="'+ id +'"';    
+    var query = 'DELETE FROM itemList WHERE id="'+ id +'"';    
     connect.query(query,function(err,rows){
         console.log(query);
         res.redirect('/');

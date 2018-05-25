@@ -17,6 +17,7 @@ var edit = require('./routes/edit');
 var drop = require('./routes/drop');
 var register = require('./routes/register');
 var login = require('./routes/login');
+var add = require('./routes/add');
 
 var passport = require('passport');
 
@@ -44,9 +45,10 @@ app.use(session({
 }));
 app.use('/register',register);
 app.use('/login',login);
-app.use('/',sessionStatus,routes);
-app.use('/edit',sessionStatus,edit);
-app.use('/drop',sessionStatus,drop);
+app.use('/',routes);
+app.use('/add',add);
+app.use('/edit',edit);
+app.use('/drop',drop);
 
 
 // catch 404 and forward to error handler

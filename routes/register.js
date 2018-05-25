@@ -11,11 +11,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req,res,next){
-  var user_name = req.body.userName;
-  var user_email= req.body.userEmail;
+  var userName = req.body.userName;
+  var userEmail= req.body.userEmail;
   var password = req.body.password;
 
-  var query = 'INSERT INTO users(user_name,user_email,password) VALUES("'+ user_name +'",'+' "' + user_email + '",'+'"'+password+'")';
+  var query = 'INSERT INTO users(user_name,user_email,password) VALUES("'+ userName +'",'+' "' + userEmail + '",'+'"'+password+'")';
 
   connect.query(query,function(err,rows){
     res.redirect('/');

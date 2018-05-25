@@ -5,7 +5,7 @@ block content
     form(action="/edit/#{id}" method="POST")
       each item in itemList         
         input(type="number" name="id" placeholder="#{item.id}" value="#{item.id}")
-        input(type="text" name="itemName" placeholder="#{item.item_name}" value="#{item.item_name}")
+        input(type="text" name="itemName" placeholder="#{item.itemName}" value="#{item.itemName}")
         input(type="number" name="quantity" placeholder="#{item.quantity}" value="#{item.quantity}")
         input(type="submit" value="この内容に変更する")
         a(href="/drop/#{id}") 削除
