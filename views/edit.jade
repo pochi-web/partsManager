@@ -4,8 +4,16 @@ block content
   h1 #{title}
     form(action="/edit/#{id}" method="POST")
       each item in itemList         
-        input(type="number" name="id" placeholder="#{item.id}" value="#{item.id}")
-        input(type="text" name="itemName" placeholder="#{item.itemName}" value="#{item.itemName}")
-        input(type="number" name="quantity" placeholder="#{item.quantity}" value="#{item.quantity}")
+        input(type="number" name="id" placeholder="管理番号" value="#{item.id}")
+        input(type="text" name="category" placeholder="分類" value="#{item.category}")
+        input(type="text" name="producer" placeholder="メーカー" value="#{item.producer}")
+        input(type="text" name="itemName" placeholder="製品名" value="#{item.itemName}")
+        input(type="text" name="product_number" placeholder="型式" value="#{item.product_number}")
+        input(type="text" name="rack" placeholder="棚番号" value="#{item.rack}")
+        input(type="text" name="palette" placeholder="パレット" value="#{item.palette}")
+        input(type="text" name="vender" placeholder="仕入先" value="#{item.vender}")    
+        input(type="number" name="used" placeholder="中古品在庫" value="#{item.used}")
+        input(type="number" name="new" placeholder="新品在庫" value="#{item.brand_new}")
+        input(type="number" name="quantity" placeholder="数量" value="#{item.quantity}")
         input(type="submit" value="この内容に変更する")
         a(href="/drop/#{id}") 削除
