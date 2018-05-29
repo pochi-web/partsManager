@@ -15,5 +15,10 @@ block content
         input(type="number" name="used" placeholder="中古品在庫" value="#{item.used}")
         input(type="number" name="new" placeholder="新品在庫" value="#{item.brand_new}")
         input(type="number" name="quantity" placeholder="数量" value="#{item.quantity}")
+        input(type="number" name="unit_price" placeholder="最新単価" value="#{item.unit_price}")
+        input(type="number" name="amount" placeholder="金額" value="#{item.amount}")
+        input(type="number" name="mounted" placeholder="実装数" value="#{item.mounted}")
+        input(type="number" name="proper_stock" placeholder="適正在庫" value="#{item.proper_stock}")
+        input(type="text" name="charge" placeholder="担当" value="#{item.charge}")
         input(type="submit" value="この内容に変更する")
         a(href="/drop/#{id}") 削除

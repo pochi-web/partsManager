@@ -26,9 +26,16 @@ router.post('/', function(req,res,next){
   var used = req.body.used;
   var brand_new = req.body.new;
   var quantity = req.body.quantity;
-  var last_modified = moment().format('YYYY-MM-DD HH:mm:ss');
+  var unit_price = req.body.unit_price;
+  var amount = req.body.amount;
+  var mounted = req.body.mounted;
+  var proper_stock = req.body.proper_stock;
+  var charge = req.body.charge;
 
-  var query = 'INSERT INTO itemList(category,producer,itemName,product_number,rack,palette,vender,used,brand_new,quantity,last_modified) VALUES("'+ category +'",' + '  "'+ producer +'", '+' "'+ itemName +'", '+' "'+ product_number +'", '+' "'+ rack +'", '+' "'+ palette +'", '+' "'+ vender +'", '+' "'+ used +'", '+' "' + brand_new + '", '+' "' + quantity + '", '+' "' + last_modified + '")';
+  
+  var last_modified = moment().format('YYYY-MM-DD');
+
+  var query = 'INSERT INTO itemList(category,producer,itemName,product_number,rack,palette,vender,used,brand_new,quantity,unit_price,amount,mounted,proper_stock,charge,last_modified) VALUES("'+ category +'",' + '  "'+ producer +'", '+' "'+ itemName +'", '+' "'+ product_number +'", '+' "'+ rack +'", '+' "'+ palette +'", '+' "'+ vender +'", '+' "'+ used +'", '+' "' + brand_new + '", '+' "' + quantity + '", '+' "' + unit_price + '", '+' "'+amount+'",'+' "'+mounted+'",'+'"'+proper_stock+'",'+'"'+charge+'",'+' "' + last_modified + '")';
 
   connect.query(query,function(err,rows){
     res.redirect('/');

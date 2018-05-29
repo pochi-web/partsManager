@@ -2,26 +2,48 @@ extends layout
 
 block content
   form(action='/' method="POST")
-  div.row
-    h1.col.s6 #{title}
-    a(href="add").waves-effect.waves-light.btn 品目追加
-  ul
-    table.striped
-      thead
-        tr.card-panel.teal.lighten-2
-          th 管理番号
-          th アイテム名
-          th 数量
-          th 更新日
-          th
-      tbody
-        each item in itemList
-          tr
-            td #{item.id}
-            td #{item.itemName}
-            td #{item.quantity}
-            td #{item.last_modified}
-            td
-              a(href="edit/#{item.id}").waves-effect.waves-light.btn-small 編集する
+  table.striped
+    thead
+      tr.card-panel.teal.lighten-2
+        th 管理番号
+        th 分類
+        th メーカー
+        th 製品名
+        th 型式
+        th 棚番号
+        th パレット
+        th 仕入先
+        th 中古品在庫
+        th 新品在庫
+        th 数量
+        th 最新単価
+        th 金額
+        th 実装数
+        th 適正在庫
+        th 担当
+        th 最終更新日
+        th 
+    tbody
+      each item in itemList
+        tr
+          td #{item.id}
+          td #{item.category}
+          td #{item.producer}
+          td #{item.itemName}
+          td #{item.product_number}
+          td #{item.rack}
+          td #{item.palette}
+          td #{item.vender}
+          td #{item.used}
+          td #{item.brand_new}
+          td #{item.quantity}
+          td #{item.unit_price}
+          td #{item.amount}
+          td #{item.mounted}
+          td #{item.proper_stock}
+          td #{item.charge}
+          td #{item.last_modified}
+          td
+            a(href="edit/#{item.id}").waves-effect.waves-light.btn-small 編集する
      
 

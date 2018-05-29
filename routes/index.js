@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var connect = require('./connect');
 var moment = require('moment');
+moment.locale();
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -20,7 +22,7 @@ router.post('/', function(req,res,next){
   var id = req.body.id;
   var itemName = req.body.itemName;
   var quantity = req.body.quantity;
-  var last_modified = moment().format('YYYY-MM-DD HH:mm:ss');
+  var last_modified = mmoment().format('YYYY-MM-DD HH:mm:ss');
 
   var query = 'INSERT INTO itemList(itemName,quantity,last_modified) VALUES("'+ itemName +'",'+' "' + quantity + '",'+'"'+last_modified+'")';
 
