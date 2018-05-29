@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var connect = require('./connect');
-var moment = require('moment');
+var moment = require('moment-timezone');
+moment.tz.setDefault("Asia/Tokyo");
 
 router.get('/:id',function(req,res,next){
     var id = req.params.id;
@@ -28,14 +29,13 @@ router.post('/:id',function(req,res,next){
   var vender = req.body.vender;
   var used = req.body.used;
   var brand_new = req.body.new;
-  var quantity = req.body.quantity;
   var unit_price = req.body.unit_price;
   var amount = req.body.amount;
   var mounted = req.body.mounted;
   var proper_stock = req.body.proper_stock;
   var charge = req.body.charge;
-    var last_modified = moment().format('YYYY-MM-DD HH:mm:ss');
-    var query = 'UPDATE itemList SET id="'+newId+'", category="'+category+'", producer="'+producer+'",itemName="'+itemName+'", product_number="'+product_number+'",rack="'+rack+'",palette="'+palette+'",vender="'+vender+'",used="'+used+'",brand_new="'+brand_new+'",quantity="'+quantity+'",unit_price="'+unit_price+'",amount="'+amount+'",mounted="'+mounted+'",proper_stock="'+proper_stock+'",charge="'+charge+'",last_modified="'+last_modified+'" WHERE id="'+id+'"';    
+    var last_modified = moment().format("YYYY-MM-DD");
+    var query = 'UPDATE itemList SET id="'+newId+'", category="'+category+'", producer="'+producer+'",itemName="'+itemName+'", product_number="'+product_number+'",rack="'+rack+'",palette="'+palette+'",vender="'+vender+'",used="'+used+'",brand_new="'+brand_new+'",unit_price="'+unit_price+'",amount="'+amount+'",mounted="'+mounted+'",proper_stock="'+proper_stock+'",charge="'+charge+'",last_modified="'+last_modified+'" WHERE id="'+id+'"';    
     connect.query(query,function(err,rows){
         console.log(query);
         res.redirect('/');

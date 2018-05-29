@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var connect = require('./connect');
-var moment = require('moment');
+var moment = require('moment-timezone');
+moment.tz.setDefault("Asia/Tokyo");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -33,9 +34,9 @@ router.post('/', function(req,res,next){
   var charge = req.body.charge;
 
   
-  var last_modified = moment().format('YYYY-MM-DD');
+  var last_modified = moment().format("YYYY-MM-DD");
 
-  var query = 'INSERT INTO itemList(category,producer,itemName,product_number,rack,palette,vender,used,brand_new,quantity,unit_price,amount,mounted,proper_stock,charge,last_modified) VALUES("'+ category +'",' + '  "'+ producer +'", '+' "'+ itemName +'", '+' "'+ product_number +'", '+' "'+ rack +'", '+' "'+ palette +'", '+' "'+ vender +'", '+' "'+ used +'", '+' "' + brand_new + '", '+' "' + quantity + '", '+' "' + unit_price + '", '+' "'+amount+'",'+' "'+mounted+'",'+'"'+proper_stock+'",'+'"'+charge+'",'+' "' + last_modified + '")';
+  var query = 'INSERT INTO itemList(category,producer,itemName,product_number,rack,palette,vender,used,brand_new,unit_price,amount,mounted,proper_stock,charge,last_modified) VALUES("'+ category +'",' + '  "'+ producer +'", '+' "'+ itemName +'", '+' "'+ product_number +'", '+' "'+ rack +'", '+' "'+ palette +'", '+' "'+ vender +'", '+' "'+ used +'", '+' "' + brand_new + '", '+' "' + unit_price + '", '+' "'+amount+'",'+' "'+mounted+'",'+'"'+proper_stock+'",'+'"'+charge+'",'+' "' + last_modified + '")';
 
   connect.query(query,function(err,rows){
     res.redirect('/');

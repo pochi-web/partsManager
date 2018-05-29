@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var connect = require('./connect');
-var moment = require('moment');
-moment.locale();
+var moment = require('moment-timezone');
+moment.tz.setDefault("Asia/Tokyo");
 
 
 /* GET home page. */
@@ -22,7 +22,7 @@ router.post('/', function(req,res,next){
   var id = req.body.id;
   var itemName = req.body.itemName;
   var quantity = req.body.quantity;
-  var last_modified = mmoment().format('YYYY-MM-DD HH:mm:ss');
+  var last_modified = moment().format("YYYY-MM-DD");
 
   var query = 'INSERT INTO itemList(itemName,quantity,last_modified) VALUES("'+ itemName +'",'+' "' + quantity + '",'+'"'+last_modified+'")';
 

@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var connect = require('./connect');
-var moment = require('moment');
+var moment = require('moment-timezone');
+moment.tz.setDefault("Asia/Tokyo");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

@@ -4,9 +4,10 @@ var dbconfig = {
     host:'localhost',
     user:'root',
     password:'root',
-    database:'partsManager'
+    database:'partsManager',
+    timezone: 'jst'
 };
 
-var connect = mysql.createPool(dbconfig);
+var connect = mysql.createConnection(dbconfig);
 
 module.exports = connect;
