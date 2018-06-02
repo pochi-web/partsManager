@@ -30,7 +30,7 @@ router.post('/:id',function(req,res,next){
   var used = req.body.used;
   var brand_new = req.body.new;
   var unit_price = req.body.unit_price;
-  var amount = req.body.amount;
+  var amount = unit_price*brand_new;
   var mounted = req.body.mounted;
   var proper_stock = req.body.proper_stock;
   var charge = req.body.charge;

@@ -11,7 +11,8 @@ router.get('/', function(req, res, next) {
   connect.query(query,function(err,rows){
     console.log(rows);
     res.render('add', { 
-      title: '新規品目追加'      
+      title: '新規品目追加',
+      itemList: rows      
     });
   })
 });
@@ -28,7 +29,7 @@ router.post('/', function(req,res,next){
   var brand_new = req.body.new;
   var quantity = req.body.quantity;
   var unit_price = req.body.unit_price;
-  var amount = req.body.amount;
+  var amount = unit_price*brand_new;
   var mounted = req.body.mounted;
   var proper_stock = req.body.proper_stock;
   var charge = req.body.charge;

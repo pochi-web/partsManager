@@ -5,7 +5,7 @@ block content
     form(action="/edit/#{id}" method="POST")
       each item in itemList         
         input(type="number" name="id" placeholder="管理番号" value="#{item.id}")
-        input(type="text" name="category" placeholder="分類" value="#{item.category}")
+        input(type="text" name="category" list="category" placeholder="分類" value="#{item.category}")
         input(type="text" name="producer" placeholder="メーカー" value="#{item.producer}")
         input(type="text" name="itemName" placeholder="製品名" value="#{item.itemName}")
         input(type="text" name="product_number" placeholder="型式" value="#{item.product_number}")
@@ -15,7 +15,6 @@ block content
         input(type="number" name="used" placeholder="中古品在庫" value="#{item.used}")
         input(type="number" name="new" placeholder="新品在庫" value="#{item.brand_new}")
         input(type="number" name="unit_price" placeholder="最新単価" value="#{item.unit_price}")
-        input(type="number" name="amount" placeholder="金額" value="#{item.amount}")
         input(type="number" name="mounted" placeholder="実装数" value="#{item.mounted}")
         input(type="number" name="proper_stock" placeholder="適正在庫" value="#{item.proper_stock}")
         input(type="text" name="charge" placeholder="担当" value="#{item.charge}")

@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  form(action='/' method="POST")
+  form(action='/' method="POST" class="row")
     table.striped
       thead
         tr.card-panel.teal.lighten-2
@@ -15,7 +15,6 @@ block content
           th 仕入先
           th 中古品在庫
           th 新品在庫
-          th 数量
           th 最新単価
           th 金額
           th 実装数
@@ -35,9 +34,8 @@ block content
             td #{item.palette}
             td #{item.vender}
             td #{item.used}
-            td #{item.brand_new}
-            td #{item.quantity}
-            td #{item.unit_price}
+            td(id="brand_new") #{item.brand_new}
+            td(class="unit_price") #{item.unit_price}
             td #{item.amount}
             td #{item.mounted}
             td #{item.proper_stock}
@@ -46,9 +44,11 @@ block content
             td
               a(href="edit/#{item.id}").waves-effect.waves-light.btn-small 編集する
   .row
-    a(class="waves-effect waves-light btn-small" href="/add") 新規追加
-      i(class="material-icons left") cloud
-    a(class="waves-effect waves-light btn-small" href="/logout") ログアウト
-      i(class="material-icons left") cloud
+    div.col.s2
+      a(class="waves-effect waves-light btn-small" href="/add") 新規追加
+        i(class="material-icons left") cloud
+    div.col.s2
+      a(class="waves-effect waves-light btn-small" href="/logout") ログアウト
+        i(class="material-icons left") cloud
      
 

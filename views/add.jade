@@ -3,20 +3,37 @@ extends layout
 block content
   h1 #{title}
     form(action="/add" method="POST")
-      input(type="text" name="category" placeholder="分類" value="")
-      input(type="text" name="producer" placeholder="メーカー" value="")
+      input(type="text" list="category" name="category" placeholder="分類" value="")
+      datalist(id="category")
+        each item in itemList
+          option(value="#{item.category}") 
+      input(type="text" list="producer" name="producer" placeholder="メーカー" value="")
+      datalist(id="producer")
+        each item in itemList
+          option(value="#{item.producer}")
       input(type="text" name="itemName" placeholder="製品名" value="")
       input(type="text" name="product_number" placeholder="型式" value="")
-      input(type="text" name="rack" placeholder="棚番号" value="")
-      input(type="text" name="palette" placeholder="パレット番号" value="")
-      input(type="text" name="vender" placeholder="仕入先" value="")    
+      input(type="text" name="rack" list="rack" placeholder="棚番号" value="")
+      datalist(id="rack")
+        each item in itemList
+          option(value="#{item.rack}")
+      input(type="text" name="palette" list="palette" placeholder="パレット番号" value="")
+      datalist(id="palette")
+        each item in itemList
+          option(value="#{item.palette}")
+      input(type="text" name="vender" list="vender" placeholder="仕入先" value="") 
+      datalist(id="vender")
+        each item in itemList
+          option(value="#{item.vender}")  
       input(type="number" name="used" placeholder="中古品在庫数" value="")
       input(type="number" name="new" placeholder="新品在庫数" value="")
       input(type="number" name="unit_price" placeholder="最新単価" value="")
-      input(type="number" name="amount" placeholder="金額" value="")
       input(type="number" name="mounted" placeholder="実装数" value="")
       input(type="number" name="proper_stock" placeholder="適正在庫" value="")
-      input(type="text" name="charge" placeholder="担当" value="")
+      input(type="text" name="charge" list="charge" placeholder="担当" value="")
+      datalist(id="charge")
+        each item in itemList
+          option(value="#{item.charge}") 
       .row
         button(class="btn waves-effect waves-light" type="submit" name="action") 追加
           i(class="material-icons right") send
