@@ -6,7 +6,7 @@ moment.tz.setDefault("Asia/Tokyo");
 
 var query = 'SELECT category FROM itemList'
 var getcategories = connect.query(query,function(err,categories){
-
+  res.render()
 })
 
 
