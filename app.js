@@ -24,6 +24,8 @@ var logout = require('./routes/logout');
 var passport = require('passport');
 
 var app = express();
+//port change
+app.listen(80);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
